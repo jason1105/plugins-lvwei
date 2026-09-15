@@ -1,14 +1,9 @@
 {
-  "name": "Bad Name With Spaces",
+  "name": "starter",
   "displayName": "Starter",
   "version": "0.1.0",
   "description": "Starter plugin scaffold: command + skill + agent + hook",
-  "author": {
-    "name": "lvwei"
-  },
+  "author": { "name": "lvwei" },
   "license": "MIT",
-  "keywords": [
-    "starter",
-    "scaffold"
-  ]
+  "keywords": ["starter", "scaffold"]
 }
