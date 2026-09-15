@@ -9,6 +9,12 @@
       "source": "starter",
       "description": "Starter scaffold: command + skill + agent + hook",
       "version": "0.1.0"
+    },
+    {
+      "name": "task-tree",
+      "source": "task-tree",
+      "description": "Recursive task-decomposition methodology: 00-实施计划.md + 01-89/99 numbering, fan-out thresholds, cascading status updates.",
+      "version": "0.1.0"
     }
   ]
 }
