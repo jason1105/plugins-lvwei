@@ -1,0 +1,42 @@
+name: Validate Plugins
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Claude Code CLI
+        # Pinned to >=2.1.239: marketplace.json's metadata.pluginRoot field
+        # requires that version or newer. Do not switch this to the npm
+        # "stable" dist-tag without checking it has caught up past that line.
+        run: npm install -g @anthropic-ai/claude-code@latest
+
+      - name: Validate marketplace manifest and listed plugins
+        run: claude plugin validate . --strict
+
+      - name: Validate each plugin's manifest and component directories
+        run: |
+          set -e
+          shopt -s nullglob
+          for plugin_dir in plugins/*/; do
+            echo "== ${plugin_dir} =="
+            claude plugin validate "${plugin_dir}" --strict
+            for component in skills agents commands; do
+              component_dir="${plugin_dir}${component}"
+              if [ -d "${component_dir}" ]; then
+                claude plugin validate "${component_dir}" --strict
+              fi
+            done
+          done
