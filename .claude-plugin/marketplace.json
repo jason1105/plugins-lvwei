@@ -1,0 +1,14 @@
+{
+  "name": "plugins-lvwei",
+  "owner": { "name": "lvwei" },
+  "description": "lvwei's personal Claude Code plugin marketplace",
+  "metadata": { "pluginRoot": "./plugins" },
+  "plugins": [
+    {
+      "name": "starter",
+      "source": "starter",
+      "description": "Starter scaffold: command + skill + agent + hook",
+      "version": "0.1.0"
+    }
+  ]
+}
