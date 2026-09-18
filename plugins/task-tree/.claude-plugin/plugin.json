@@ -1,0 +1,9 @@
+{
+  "name": "task-tree",
+  "displayName": "Task Tree",
+  "version": "0.1.0",
+  "description": "Recursive task-decomposition methodology: one 00-实施计划.md per task, fixed 01-89/99 numbering, threshold-based fan-out, cascading status updates.",
+  "author": { "name": "lvwei" },
+  "license": "MIT",
+  "keywords": ["task-decomposition", "planning", "wbs", "status-tracking"]
+}
